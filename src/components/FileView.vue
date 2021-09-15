@@ -13,6 +13,7 @@ export default {
 
 <style scoped lang="scss">
 .file{
+  display: none;
   color: green;
 }
 </style>

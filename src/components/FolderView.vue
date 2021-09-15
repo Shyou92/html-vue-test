@@ -1,10 +1,10 @@
 <template>
   <p class="folder">{{name}}</p>
   <template v-for="folder in folders" :key='folder.files.length'>
-    <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files"/>
+    <FolderView class='folders' :name="folder.name" :folders="folder.folders" :files="folder.files"/>
   </template>
   <template v-for="file in files" :key='file.length'>
-    <FileView :name="file.name"/>
+    <FileView class='files' :name="file.name"/>
   </template>
 </template>
 
