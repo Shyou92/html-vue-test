@@ -1,5 +1,9 @@
 <template>
-  <FolderView name="$" :folders="folders" :files="files" />
+  <FolderView name="$"
+    :folders="folders" 
+    :files="files" 
+    :depth="0"
+  />
 </template>
 
 <script>
@@ -16,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,29 +34,4 @@ export default {
   border: 1px solid black;
 }
 
-%tplfolder {
-  width: 72px;
-  height: 63px;
-  background-color: lightblue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 25%;
-  cursor: pointer;
-  opacity: .7;
-}
-
-.folder {
-  // display: none;
-  @extend %tplfolder;
-}
-
-.folder:hover {
-  opacity: 1;
-  transition: .5s;
-}
-
-.folder:nth-child(1) {
-  display: flex;
-}
 </style>
