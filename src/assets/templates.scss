@@ -1,5 +1,6 @@
 %tplfolder {
   display: flex;
+  align-self: center;
   width: 72px;
   height: 63px;
   background-color: lightblue;
@@ -9,4 +10,13 @@
   border-radius: 25%;
   cursor: pointer;
   opacity: .7;
+}
+
+%tplfiles {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 36px;
+  height: 36px;
+  background-color: lightseagreen;
 }

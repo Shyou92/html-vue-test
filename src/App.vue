@@ -27,7 +27,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
   height: 60vh;
   width: 60%;

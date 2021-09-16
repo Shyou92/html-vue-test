@@ -12,6 +12,7 @@
       :folders="folder.folders" 
       :files="folder.files"
       :depth="depth + 1"
+      v-bind:key="showChildren"
     />
   </template>
   <template v-for="file in files" :key='file.length'>
@@ -64,12 +65,5 @@ export default {
     transition: .5s;
   }
 
-  &_is-active {
-    display: flex;
-  }
-
-  &:nth-child(1) {
-    display: flex;
-  }
 }
 </style>

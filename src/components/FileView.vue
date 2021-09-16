@@ -12,8 +12,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/templates.scss';
+
 .file{
-  // display: none;
   color: green;
+  @extend %tplfiles
 }
 </style>
