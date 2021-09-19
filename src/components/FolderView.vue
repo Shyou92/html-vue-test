@@ -1,7 +1,12 @@
 <template>
-  <p class="folder" 
-    @click="toggleChildren"
-  >{{name}}</p>
+<div class="folder-container" 
+  @click="toggleChildren">
+  <div class="folder__background"></div>
+    <p class="folder" 
+      >{{name}}
+    </p>
+  </div>
+
   <template v-for="folder in folders" 
     :key='folder.files.length' 
     :style="indent"
@@ -15,12 +20,14 @@
       v-bind:key="showChildren"
     />
   </template>
-  <template v-for="file in files" :key='file.length'>
-    <FileView 
-      v-if="showChildren"
-      :name="file.name"
-    />
-  </template>
+    <template v-for="file in files" :key='file.length'>
+      <FileView 
+        v-if="showChildren"
+        :name="file.name"
+        :length="file.length"
+        :type="file.type"
+      />
+    </template>
 </template>
 
 <script>
@@ -46,7 +53,9 @@ export default {
   },
   computed: {
     indent() {
-      return { transform: `translate(${this.depth * 50}px)`}
+      return {
+        transform: `translate(${this.depth * 50}px)`
+      }
     }
   }
 }
@@ -55,14 +64,28 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/templates.scss";
+@import '../assets/mixins.scss';
 
 .folder {
   color: orangered;
   @extend %tplfolder;
 
-    &:hover {
+  &-container {
+    @extend %tplsize;
+    cursor: pointer;
+    margin: 80px auto 0;
+  }
+  
+  &__background {
+    @extend %tplsize;
+    background-color: lightblue;
+    border-radius: 15px;
     opacity: 1;
-    transition: .5s;
+  }
+
+    &-container:hover {
+    opacity: .5;
+    transition: 1.5s;
   }
 
 }
