@@ -33,7 +33,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/templates.scss';
-@import '../assets/mixins.scss';
 
 .file{
   color: green;
